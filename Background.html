@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" intial-scale="1.0">
+		<link rel="icon" href="/storage/emulated/0/Download/share.png">
+		<title>Changing Background Color</title>
+	</head>
+	<body>
+	<style type="text/css">
+		button {
+			padding: 10px;
+			border-radius: 8%;
+			border: 1px groove grey;
+			background: none;
+			color: hsl(227deg, 47%, 96%);
+			font-size: 15px;
+			width: 95px;
+		}
+		body{
+			background: coral;
+			text-align: center;
+			margin-top: 280px;
+		}
+		@media screen and (min-width: 480px) {
+			button{
+				margin-top: 600px;
+				width: 100px;
+				height: 40px;
+				font-size: 15px;
+			}
+		}
+	</style>
+		<button class="btn" id="colorify" onclick="changeBodyBg()">Click Me!</button>
+	<script type="text/javascript">
+		function changeBodyBg() {
+			document.body.style.backgroundColor = "magenta"
+			document.getElementById('colorify').style.backgroundColor = "grey";
+			var colors = ["red", "blue", "green", "yellow", "purple", "orange", "cyan", "lime"] 
+			index = 0;                                    
+				document.getElementById("colorify").onclick = function() {
+	 			document.body.style.background = colors[index];  // set the color of body to the current color
+			index = (index + 1) % colors.length;             // increment index to point to the next color (if it goes beyond the length of the coices array get it back to 0 using the modulo %)
+			}
+		}
+		
+	</script>
+	</body>
+</html>
