@@ -35,11 +35,12 @@
 	<script type="text/javascript">
 		function changeBodyBg() {
 			document.body.style.backgroundColor = "magenta"
-			document.getElementById('colorify').style.backgroundColor = "grey";
-			var colors = ["red", "blue", "green", "yellow", "purple", "orange", "cyan", "lime"] 
-			index = 0;                                    
+				var colors = ["red", "blue", "green", "yellow", "purple", "orange", "cyan", "lime"] 
+				var color = ["green", "orange", "blue", "cyan", "coral", "indigo", "violet", "purple"]
+			index = 0;     
 				document.getElementById("colorify").onclick = function() {
-	 			document.body.style.background = colors[index];  // set the color of body to the current color
+	 			document.body.style.background = colors[index];
+	 			document.getElementById('colorify').style.backgroundColor = color[index]; // set the color of body to the current color
 			index = (index + 1) % colors.length;             // increment index to point to the next color (if it goes beyond the length of the coices array get it back to 0 using the modulo %)
 			}
 		}
